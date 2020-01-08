@@ -26,4 +26,4 @@ def answer_api(cnt = 1):
 
     return json.dumps(itog_arr)
 
-print(answer_api(5))
+# print(answer_api(5))
