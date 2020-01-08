@@ -12,5 +12,5 @@
     },
     "eslint.autoFixOnSave": false,
     "eslint.alwaysShowStatus": true,
-    "python.pythonPath": "/usr/bin/python3.8"
+    "python.pythonPath": "/home/belrom/skillfactory/C5.10/.venv/bin/python3"
 }

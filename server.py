@@ -2,10 +2,10 @@ import os
 import random
 
 from bottle import route, run
-
+from answer import answer, answer_api
 
 def generate_message():
-    return "Сегодня уже не вчера, ещё не завтра"
+    return answer()
 
 
 @route("/")
@@ -32,7 +32,21 @@ def index():
 
 @route("/api/roll/<some_id:int>")
 def example_api_response(some_id):
-    return {"requested_id": some_id, "random_number": random.randrange(some_id)}
+    return {"requested_id": some_id, "random_number": random.randrange(some_id), "str": "sdads"}
+
+
+@route("/api/generate")
+def api_response_one():
+    ans = answer_api()
+    print(ans)
+    return ans
+
+
+@route("/api/generate/<cnt:int>")
+def api_response_many(cnt):
+    # ans = answer_api(cnt)
+    # print(ans)
+    return answer_api(cnt)
 
 
 if os.environ.get("APP_LOCATION") == "heroku":
