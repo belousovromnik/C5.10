@@ -14,7 +14,8 @@ def answer():
 
 def answer_api(cnt = 1):
     import json
-
+    import codecs
+    
     itog_arr = {}
     if cnt == 1:
         itog_arr = {"message": answer()}
@@ -24,6 +25,7 @@ def answer_api(cnt = 1):
             strt.append(answer())
         itog_arr = {"messages": strt}
 
-    return json.dumps(itog_arr)
+    ret = codecs.decode(json.dumps(itog_arr), 'unicode_escape')
+    return ret
 
 # print(answer_api(5))
