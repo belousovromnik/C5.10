@@ -13,6 +13,8 @@ def answer():
 
 
 def answer_api(cnt = 1):
+    import json
+
     itog_arr = {}
     if cnt == 1:
         itog_arr = {"message": answer()}
@@ -22,6 +24,6 @@ def answer_api(cnt = 1):
             strt.append(answer())
         itog_arr = {"messages": strt}
 
-    return itog_arr
+    return json.dumps(itog_arr)
 
-# print(answer_api(5))
+print(answer_api(5))
