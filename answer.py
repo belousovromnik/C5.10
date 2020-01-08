@@ -25,7 +25,8 @@ def answer_api(cnt = 1):
             strt.append(answer())
         itog_arr = {"messages": strt}
 
-    ret = codecs.decode(json.dumps(itog_arr), 'unicode_escape')
+    # ret = codecs.decode(json.dumps(itog_arr), 'unicode_escape')
+    ret = itog_arr
     return ret
 
 # print(answer_api(5))
