@@ -36,6 +36,7 @@ def example_api_response(some_id):
 
 
 @route("/api/generate")
+@route("/api/generate/")
 def api_response_one():
     ans = answer_api()
     # print(ans)
